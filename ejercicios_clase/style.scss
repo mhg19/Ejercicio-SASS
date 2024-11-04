@@ -1,0 +1,62 @@
+@import "_variables.scss";
+
+body {
+    font-family: $fuente;
+}
+
+h1 {
+    color: $colorPrimario;
+}
+
+h2 {
+    color: $colorSecundario;
+}
+
+img {
+    height: 14rem;
+}
+
+@mixin contenedor-comida {
+    padding: 1rem;
+    border: 1px solid $colorPrimario;
+    border-radius: 5px;
+    
+}
+
+.comida {
+    @include contenedor-comida;
+}
+
+
+
+@for $i from 1 through 3 {
+    ul li.item-#{$i}:hover {
+        border: $i * 1px solid red; // Borde rojo
+    }
+}
+
+.conjunto {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    display: inline-block;
+    border: none;
+    a{
+        color: white;
+        text-decoration: none;
+    }
+    
+}
+
+.anadir {
+    @extend .conjunto;
+    background-color: $colorPrimario; 
+}
+
+.recetas {
+    @extend .conjunto;
+    background-color: $colorSecundario; 
+}

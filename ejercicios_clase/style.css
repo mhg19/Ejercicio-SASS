@@ -1,0 +1,56 @@
+body {
+  font-family: verdana;
+}
+
+h1 {
+  color: green;
+}
+
+h2 {
+  color: limegreen;
+}
+
+img {
+  height: 14rem;
+}
+
+.comida {
+  padding: 1rem;
+  border: 1px solid green;
+  border-radius: 5px;
+}
+
+ul li.item-1:hover {
+  border: 1px solid red;
+}
+
+ul li.item-2:hover {
+  border: 2px solid red;
+}
+
+ul li.item-3:hover {
+  border: 3px solid red;
+}
+
+.conjunto, .recetas, .anadir {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  display: inline-block;
+  border: none;
+}
+.conjunto a, .recetas a, .anadir a {
+  color: white;
+  text-decoration: none;
+}
+
+.anadir {
+  background-color: green;
+}
+
+.recetas {
+  background-color: limegreen;
+}/*# sourceMappingURL=style.css.map */
