@@ -1,0 +1,163 @@
+@forward "normalize";
+@import "variables";
+@import "container";
+
+//Ajuste img sass
+.imgSass {
+    height: 9rem;
+}
+//ajuste de los h1 y 2
+h1,
+h2 {
+    color: $sassPink;
+}
+
+//Ajustes del footer
+footer{
+  background-color: $sassPink;
+  color: whitesmoke;
+  a{
+    color: #760735;
+    font-weight: bolder;
+  }
+}
+
+//Nav
+nav {
+    margin-top: 1rem;
+    background-color: $otherPink;
+    padding: 1rem;
+    //Enlaces dentro de la nav
+    a{
+        text-decoration: none;
+    background-color: white;
+    color: $sassPink;
+    //Enlaces dentro de la nav cuando pasas por encima
+    &:hover {
+        font-weight: bold;
+    }
+
+    }
+}
+
+//Características principales
+body {
+    font-family: sans-serif;
+    font-weight: 200;
+    text-decoration: none;
+
+}
+
+//Características del ASIDE
+aside{
+    a{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+    color: black;
+    }
+    
+}
+
+
+//Ejercicio paleta de colores
+
+//Mapa de colores principales
+$colores: (
+  firebrick: #B22222,
+  greenyellow: #ADFF2F,
+  deepskyblue: #00BFFF,
+  blueviolet: #8A2BE2
+);
+
+// Funciones
+
+//Para color LIGHTEN devolvemos con return el mix (con blanco)
+@function lighten($color, $amount) {
+  @return mix(white, $color, $amount);
+}
+
+
+//Para color LIGHTEN devolvemos con return el mix (con negro)
+@function darken($color, $amount) {
+  @return mix(black, $color, $amount);
+}
+
+// Para la seccion de colores principales:
+.principales {
+  .misColoresPrincipales {
+    //Caracteristicas de los cuadros de color
+    .colorP {
+      width: 100%; 
+      height: 100px; 
+      margin-bottom: 10px; 
+    }
+
+    @each $nombre, $valor in $colores {
+      // Para cada color principal, asignamos el fondo.....
+      &:nth-child(n) {
+        &:nth-of-type(1) {
+          .colorP {
+            //Le indicamos el color depende de este
+            background-color: $valor; 
+          }
+        }
+      }
+    }
+  }
+}
+
+//Para que se vean gruesos
+strong, h3, h4{
+    font-weight: bold;
+}
+
+// Estilos para la sección de tonalidades
+.tonalidades {
+  .color-tono {
+    //cada cuadro de color
+    width: 100%; 
+    height: 100px; 
+
+    //Aquí le estamos indicando el color con las funciones anteriores
+    &.firebrick {
+      background-color: map-get($colores, firebrick); 
+    }
+    &.firebrick-light {
+      background-color: lighten(map-get($colores, firebrick), 20%);
+    }
+    &.firebrick-dark {
+      background-color: darken(map-get($colores, firebrick), 20%); 
+    }
+
+    &.greenyellow {
+      background-color: map-get($colores, greenyellow);
+    }
+    &.greenyellow-light {
+      background-color: lighten(map-get($colores, greenyellow), 20%);
+    }
+    &.greenyellow-dark {
+      background-color: darken(map-get($colores, greenyellow), 20%);
+    }
+
+    &.deepskyblue {
+      background-color: map-get($colores, deepskyblue);
+    }
+    &.deepskyblue-light {
+      background-color: lighten(map-get($colores, deepskyblue), 20%);
+    }
+    &.deepskyblue-dark {
+      background-color: darken(map-get($colores, deepskyblue), 20%);
+    }
+
+    &.blueviolet {
+      background-color: map-get($colores, blueviolet);
+    }
+    &.blueviolet-light {
+      background-color: lighten(map-get($colores, blueviolet), 20%);
+    }
+    &.blueviolet-dark {
+      background-color: darken(map-get($colores, blueviolet), 20%);
+    }
+  }
+}
